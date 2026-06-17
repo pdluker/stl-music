@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ── SEO ─────────────────────────────────────────────── -->
+<title>STL/Music — Every St. Louis Concert, Comedy & Live Show, Next 7 Days | Tickets, Times & Venues</title>
+<meta name="description" content="The complete seven-day St. Louis live entertainment slate: concerts at Enterprise Center, Hollywood Casino Amphitheatre, The Pageant, Stifel Theatre and more, plus comedy at Helium and theater at the Fox. Times, venues, headliners and tickets — updated weekly.">
+<link rel="canonical" href="https://music.stluker.com/">
+<meta name="theme-color" content="#0e1117">
+<meta property="og:type" content="website">
+<meta property="og:title" content="STL/Music — The Seven-Day St. Louis Live Show Slate">
+<meta property="og:description" content="Every concert, comedy show and theater date in St. Louis this week — with venues, headliners and tickets.">
+<meta property="og:url" content="https://music.stluker.com/">
+<meta property="og:site_name" content="STLuker Music">
+<meta name="twitter:card" content="summary_large_image">
+<!-- JSON-LD MusicEvent/ComedyEvent/TheaterEvent structured data is injected at runtime from live data
+     (see injectStructuredData) — enables Google event rich results. -->
+
+<!-- ── ADS: head insertion point ───────────────────────────
+     When approved for AdSense, paste the site tag here:
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXX" crossorigin="anonymous"></script>
+     Then set ADS_ENABLED = true in the config block below.
+──────────────────────────────────────────────────────────── -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --midnight: #0e1117;
+    --surface: #151a22;
+    --surface-2: #1b212b;
+    --chalk: #f2efe8;
+    --chalk-dim: rgba(242,239,232,0.6);
+    --chalk-faint: rgba(242,239,232,0.34);
+    --marquee: #c2447a;
+    --brass: #d9a13b;
+    --turf: #4a9166;
+    --line: rgba(242,239,232,0.08);
+    --line-strong: rgba(242,239,232,0.16);
+    --r: 10px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    background: var(--midnight);
+    color: var(--chalk);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── TOP BANNER (cross-site network) ── */
+  .top-banner {
+    background: #090b10;
+    border-bottom: 1px solid var(--line);
+    padding: 7px 20px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; flex-wrap: wrap;
+  }
+  .top-banner-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--chalk-faint);
+  }
+  .top-banner a {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--surface-2); border: 1px solid var(--line-strong);
+    border-radius: 20px; color: var(--chalk-dim); text-decoration: none;
+    font-size: 11px; font-weight: 500; padding: 4px 12px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .top-banner a:hover { background: rgba(217,161,59,0.14); border-color: var(--brass); color: var(--chalk); }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(14,17,23,0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-in {
+    max-width: 920px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; height: 52px;
+  }
+  .brand {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px;
+    letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+  }
+  .brand .seven { color: var(--marquee); }
+  .brand em {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    text-transform: none; letter-spacing: 0; font-weight: 400;
+    color: var(--chalk-faint); font-size: 13px; margin-left: 8px;
+  }
+  .pulse-status {
+    margin-left: auto; display: flex; align-items: center; gap: 7px;
+    font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--chalk-faint); white-space: nowrap;
+  }
+  .pulse-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--turf);
+    animation: pulse 2.6s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74,145,102,0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(74,145,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,145,102,0); }
+  }
+
+  /* ── HERO ── */
+  #hero { padding: 52px 0 34px; }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--brass); margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Oswald', sans-serif; font-weight: 600;
+    font-size: clamp(32px, 6vw, 56px); line-height: 1.05;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  h1 .accent { color: var(--marquee); }
+  .hero-sub { color: var(--chalk-dim); max-width: 520px; font-weight: 300; font-size: 15px; }
+
+  /* ── WEEK RAIL ── */
+  #week-rail {
+    position: sticky; top: 52px; z-index: 90;
+    background: var(--midnight);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .rail-inner { max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: repeat(7, 1fr); }
+  .rail-day {
+    padding: 10px 4px 9px; text-align: center;
+    background: none; border: none; font-family: inherit; color: inherit;
+    cursor: pointer; transition: background 0.15s; border-radius: 0;
+  }
+  .rail-day:hover { background: rgba(242,239,232,0.04); }
+  .rail-day:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
+  .rail-dow { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--chalk-faint); }
+  .rail-date { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; }
+  .rail-ticks { display: flex; gap: 3px; justify-content: center; margin-top: 4px; min-height: 4px; }
+  .tick { width: 4px; height: 4px; border-radius: 50%; background: var(--chalk-faint); }
+  .tick.headliner { background: var(--brass); }
+  .rail-day.today .rail-dow, .rail-day.today .rail-date { color: var(--marquee); }
+  .rail-day.today { box-shadow: inset 0 -2px 0 var(--marquee); }
+  .rail-day.empty .rail-date { color: var(--chalk-faint); }
+
+  /* ── SECTIONS ── */
+  section { padding: 38px 0; }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  h2 {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 21px;
+    text-transform: uppercase; letter-spacing: 0.03em;
+  }
+  .section-kicker { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+
+  /* ── MARQUEE WATCH ── */
+  .marquee-scroll { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; }
+  .marquee-card {
+    background: linear-gradient(150deg, rgba(217,161,59,0.09), transparent 60%), var(--surface);
+    border: 1px solid rgba(217,161,59,0.25);
+    border-radius: var(--r); padding: 18px;
+  }
+  .marquee-tag {
+    font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass);
+  }
+  .marquee-matchup { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 19px; text-transform: uppercase; margin: 6px 0 2px; }
+  .marquee-when { font-size: 12px; color: var(--chalk-dim); margin-bottom: 8px; }
+  .marquee-story { font-size: 13px; color: var(--chalk-dim); line-height: 1.55; margin-bottom: 14px; }
+
+  /* ── FILTERS: two clean rows ── */
+  .filter-bar { display: grid; gap: 10px; margin-bottom: 26px; }
+  .filter-row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .filter-label {
+    font-family: 'Oswald', sans-serif; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--chalk-faint);
+    width: 52px; flex-shrink: 0;
+  }
+  .chip {
+    font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12.5px;
+    background: transparent; color: var(--chalk-dim);
+    border: 1px solid var(--line-strong); border-radius: 99px;
+    padding: 5px 13px; cursor: pointer; transition: all 0.13s;
+  }
+  .chip:hover { color: var(--chalk); border-color: var(--chalk-dim); }
+  .chip.active { background: var(--chalk); color: var(--midnight); border-color: var(--chalk); }
+  .chip:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+  /* ── DAY GROUPS ── */
+  .day-group { margin-bottom: 30px; scroll-margin-top: 128px; }
+  .day-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .day-head h3 {
+    font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 15px;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--chalk-dim);
+  }
+  .day-head.today-head h3 { color: var(--marquee); }
+  .day-head .count { font-size: 11px; color: var(--chalk-faint); }
+  .day-head::after { content: ''; flex: 1; height: 1px; background: var(--line); align-self: center; }
+
+  /* ── EVENT ROWS ── */
+  .event-list { display: grid; gap: 8px; }
+  .event-card {
+    display: grid; grid-template-columns: 58px 1fr auto; gap: 14px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 13px 16px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .event-card:hover { background: var(--surface-2); border-color: var(--line-strong); }
+  .ev-time { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 15px; color: var(--chalk-dim); line-height: 1.2; }
+  .ev-time small { display: block; font-size: 9px; letter-spacing: 0.14em; color: var(--chalk-faint); }
+  .ev-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.02em; }
+  .ev-title .head-flag { color: var(--brass); font-size: 12px; margin-left: 6px; }
+  .ev-meta { font-size: 12px; color: var(--chalk-faint); margin-top: 1px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .ev-source { color: var(--src, var(--chalk-dim)); font-weight: 500; }
+  .ev-meta a.quiet { color: var(--chalk-faint); text-decoration: none; border-bottom: 1px dotted var(--chalk-faint); }
+  .ev-meta a.quiet:hover, .ev-meta button.quiet:hover { color: var(--chalk); }
+  .ev-meta button.quiet {
+    background: none; border: none; padding: 0; cursor: pointer;
+    font: inherit; color: var(--chalk-faint); border-bottom: 1px dotted var(--chalk-faint);
+  }
+  .btn-tickets {
+    font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12.5px;
+    background: var(--marquee); color: #fff; border: none; border-radius: 6px;
+    padding: 8px 16px; cursor: pointer; text-decoration: none; white-space: nowrap;
+    transition: background 0.13s;
+  }
+  .btn-tickets:hover { background: #a13868; }
+  .btn-tickets:focus-visible, .quiet:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+  .empty-day { font-size: 13px; color: var(--chalk-faint); padding: 4px 2px 0; }
+
+  /* ── AD SLOTS (reserved, collapse when disabled) ── */
+  .ad-slot { display: none; margin: 26px 0; }
+  body.ads-on .ad-slot {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100px;
+    background: var(--surface);
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--r);
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--chalk-faint);
+  }
+
+  /* ── ON SALE SOON ── */
+  .off-grid { display: flex; gap: 8px; flex-wrap: wrap; }
+  .off-chip {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 99px; padding: 7px 14px; font-size: 12px; color: var(--chalk-faint);
+  }
+  .off-chip strong { color: var(--chalk-dim); font-weight: 500; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 20px 38px; text-align: center; font-size: 12px; color: var(--chalk-faint); }
+  footer .fbrand { font-family: 'Playfair Display', serif; font-style: italic; color: var(--chalk-dim); font-size: 15px; margin-bottom: 6px; }
+  .footer-network { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .footer-network-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-faint); margin-right: 2px; }
+  .footer-network-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--surface-2); border: 1px solid var(--line-strong);
+    border-radius: 20px; color: var(--chalk-dim); text-decoration: none;
+    font-size: 12px; font-weight: 400; padding: 6px 14px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  .footer-network-link:hover { background: rgba(217,161,59,0.14); border-color: var(--brass); color: var(--chalk); }
+
+  #toast {
+    position: fixed; bottom: 22px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--chalk); color: var(--midnight);
+    border-radius: 6px; padding: 9px 18px;
+    font-size: 13px; font-weight: 500; z-index: 300;
+    transition: transform 0.25s ease; pointer-events: none;
+  }
+  #toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 600px) {
+    .event-card { grid-template-columns: 50px 1fr; }
+    .btn-tickets { grid-column: 2; justify-self: start; margin-top: 2px; }
+    .filter-label { width: 100%; }
+    .pulse-status .long { display: none; }
+    .top-banner { padding: 6px 12px; gap: 6px; }
+    .top-banner-label { display: none; }
+    .top-banner a { font-size: 10px; padding: 4px 9px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <span class="top-banner-label">STLuker Network</span>
+  <a href="https://stluker.com" target="_blank">✨ STLuker</a>
+  <a href="https://sports.stluker.com" target="_blank">🏈 Sports</a>
+  <a href="https://family.stluker.com" target="_blank">🏠 Family Hub</a>
+</div>
+
+<header>
+  <div class="header-in">
+    <a class="brand" href="#hero">STL<span class="seven">/Music</span><em>an STLuker site</em></a>
+    <div class="pulse-status">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span id="pulse-text"><span class="long">Last pulse: </span>—</span>
+    </div>
+  </div>
+</header>
+
+<section id="hero" class="wrap">
+  <p class="hero-eyebrow">Saint Louis · Every Show · Next Seven Days</p>
+  <h1>The week's <span class="accent">entire marquee.</span></h1>
+  <p class="hero-sub">Concerts, comedy, and theater — refreshed automatically every week. Headliners flagged, venues mapped, tickets one tap away.</p>
+</section>
+
+<nav id="week-rail" aria-label="Seven day show density">
+  <div class="rail-inner" id="rail-inner"></div>
+</nav>
+
+<aside class="ad-slot wrap" data-ad="top-leaderboard" aria-hidden="true">Advertisement</aside>
+
+<section id="marquee" class="wrap">
+  <div class="section-head"><h2>Marquee Watch</h2><span class="section-kicker">Shows worth planning around</span></div>
+  <div class="marquee-scroll" id="marquee-grid"></div>
+</section>
+
+<section id="slate" class="wrap">
+  <div class="section-head"><h2>The Slate</h2><span class="section-kicker">Day by day</span></div>
+
+  <div class="filter-bar">
+    <div class="filter-row" role="group" aria-label="Filter by genre">
+      <span class="filter-label">Genre</span>
+      <span id="genre-chips"></span>
+    </div>
+    <div class="filter-row" role="group" aria-label="Filter by format">
+      <span class="filter-label">Format</span>
+      <span id="format-chips"></span>
+    </div>
+  </div>
+
+  <div id="days"></div>
+</section>
+
+<aside class="ad-slot wrap" data-ad="bottom-banner" aria-hidden="true">Advertisement</aside>
+
+<section id="onsale" class="wrap">
+  <div class="section-head"><h2>On Sale Soon</h2><span class="section-kicker">Just announced</span></div>
+  <div class="off-grid" id="off-grid"></div>
+</section>
+
+<footer>
+  <div class="footer-network">
+    <span class="footer-network-label">More from the network</span>
+    <a href="https://stluker.com" class="footer-network-link" target="_blank">✨ STLuker</a>
+    <a href="https://sports.stluker.com" class="footer-network-link" target="_blank">🏈 Sports</a>
+    <a href="https://family.stluker.com" class="footer-network-link" target="_blank">🏠 Family Hub</a>
+  </div>
+  <div class="fbrand">STLuker</div>
+  Auto-pulsed weekly · Schedules from public venue &amp; promoter calendars · Ticket links may be affiliate links<br>
+  © 2026 STLuker · Saint Louis, MO
+</footer>
+
+<div id="toast">Added</div>
+
+<script>
+/* ============================================================
+   CONFIG — monetization & data
+   ============================================================ */
+const ADS_ENABLED = false; // flip true once AdSense tag is in <head>; slots un-collapse
+
+// Affiliate ticket links. Replace AFF_ID per network when approved
+// (Ticketmaster Impact, AXS, SeatGeek Partners, StubHub Partnerize, Vivid Seats).
+// Per-venue overrides win; otherwise the search fallback is used.
+const AFF_ID = '';
+const TICKETS = {
+  _fallback: (e) => `https://www.ticketmaster.com/search?q=${encodeURIComponent(e.title + ' St. Louis')}${AFF_ID ? '&aid=' + AFF_ID : ''}`,
+  enterprise:   () => `https://www.ticketmaster.com/enterprise-center-tickets-saint-louis/venue/115060${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  amphitheater: () => `https://www.ticketmaster.com/hollywood-casino-amphitheatre-tickets-maryland-heights/venue/115072${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  stifel:       () => `https://www.ticketmaster.com/stifel-theatre-tickets-saint-louis/venue/115056${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  fox:          () => `https://www.fabulousfox.com/events/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  pageant:      () => `https://www.thepageant.com/events${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  delmarhall:   () => `https://www.delmarhall.com/shows${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  factory:      () => `https://thefactorystl.com/events/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  oldrockhouse: () => `https://www.oldrockhouse.com/calendar${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  offbroadway:  () => `https://offbroadwaystl.com/calendar/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  helium:       () => `https://saintlouis.heliumcomedy.com/events${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  sheldon:      () => `https://www.thesheldon.org/calendar/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  chaifetz:     () => `https://www.chaifetzarena.com/events/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  familyarena:  () => `https://familyarena.com/events/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+};
+const ticketURL = (e) => (TICKETS[e.venueKey] || TICKETS._fallback)(e);
+
+/* ── Venue metadata (where) + genre (what kind of show) ── */
+const VENUE_META = {
+  enterprise:   { label: 'Enterprise Center',           color: '#5b9bd9', format: 'Concert' },
+  amphitheater: { label: 'Hollywood Casino Amphitheatre', color: '#7aa7d9', format: 'Concert' },
+  stifel:       { label: 'Stifel Theatre',              color: '#d9a13b', format: 'Concert' },
+  fox:          { label: 'The Fabulous Fox',            color: '#e06158', format: 'Theater' },
+  pageant:      { label: 'The Pageant',                 color: '#c2447a', format: 'Concert' },
+  delmarhall:   { label: 'Delmar Hall',                 color: '#4a9166', format: 'Concert' },
+  factory:      { label: 'The Factory',                 color: '#e0c45a', format: 'Concert' },
+  oldrockhouse: { label: 'Old Rock House',              color: '#dd6b6b', format: 'Concert' },
+  offbroadway:  { label: 'Off Broadway',                color: '#6fb486', format: 'Concert' },
+  helium:       { label: 'Helium Comedy Club',          color: '#e07a5f', format: 'Comedy' },
+  sheldon:      { label: 'The Sheldon',                 color: '#9b8fd6', format: 'Theater' },
+  chaifetz:     { label: 'Chaifetz Arena',               color: '#4f83d6', format: 'Concert' },
+  familyarena:  { label: 'Family Arena',                color: '#5b9bd9', format: 'Concert' },
+};
+
+const GENRES = ['Rock','Pop','Hip-Hop','Country','R&B / Soul','Electronic','Indie / Alternative','Metal','Jazz / Blues','Comedy','Theater / Broadway','Classical / Symphony'];
+function genreOf(e) {
+  return e.genre || 'Other';
+}
+
+/* ── SEED (illustrative demo data — replaced by the weekly pulse) ── */
+const SEED = {
+  pulsedAt: '2026-06-08T11:00:00Z',
+  events: [
+    { id:'m1', venueKey:'amphitheater', genre:'Rock', title:'Velvet Static — Wide Open Tour', date:'2026-06-11', time:'19:30',
+      venue:'Hollywood Casino Amphitheatre', address:'14141 Riverport Dr, Maryland Heights, MO',
+      headliner:true, story:'Their first full St. Louis stop since the album dropped — expect the amphitheater\u2019s lawn to sell out fast. Doors at 6, opener at 7, and the late-set fireworks have become a running tradition here.' },
+    { id:'m2', venueKey:'helium', genre:'Comedy', title:'Helium Showcase: New Voices of the Midwest', date:'2026-06-11', time:'20:00',
+      venue:'Helium Comedy Club', address:'1151 St. Louis Galleria, Richmond Heights, MO' },
+    { id:'m3', venueKey:'pageant', genre:'Indie / Alternative', title:'Marlowe & The Tide', date:'2026-06-12', time:'20:00',
+      venue:'The Pageant', address:'6161 Delmar Blvd, St. Louis, MO' },
+    { id:'m4', venueKey:'fox', genre:'Theater / Broadway', title:'A Touring Production of "Harbor Lights"', date:'2026-06-12', time:'19:30',
+      venue:'The Fabulous Fox', address:'527 N Grand Blvd, St. Louis, MO' },
+    { id:'m5', venueKey:'enterprise', genre:'Pop', title:'Nova Bloom — Neon Hour World Tour', date:'2026-06-13', time:'19:00',
+      venue:'Enterprise Center', address:'1401 Clark Ave, St. Louis, MO',
+      headliner:true, story:'The arena\u2019s biggest pop date of the summer — full stage production, b-stage in the upper bowl, and a setlist that\u2019s been running close to three hours on this leg. Floor seats have been the first thing to go in every city so far.' },
+    { id:'m6', venueKey:'delmarhall', genre:'R&B / Soul', title:'Janelle Cross & The Lowdown', date:'2026-06-13', time:'20:30',
+      venue:'Delmar Hall', address:'6133 Delmar Blvd, St. Louis, MO' },
+    { id:'m7', venueKey:'offbroadway', genre:'Metal', title:'Ashfall + Support', date:'2026-06-13', time:'19:00',
+      venue:'Off Broadway', address:'3509 Lemp Ave, St. Louis, MO' },
+    { id:'m8', venueKey:'sheldon', genre:'Jazz / Blues', title:'St. Louis Jazz Collective — Summer Sessions', date:'2026-06-14', time:'19:30',
+      venue:'The Sheldon', address:'3648 Washington Blvd, St. Louis, MO' },
+    { id:'m9', venueKey:'factory', genre:'Electronic', title:'Glasshouse: Late Night Set', date:'2026-06-14', time:'22:00',
+      venue:'The Factory', address:'17105 N Outer Forty Rd, Chesterfield, MO' },
+    { id:'m10', venueKey:'helium', genre:'Comedy', title:'Headliner Weekend: Marcus Cole', date:'2026-06-14', time:'19:30',
+      venue:'Helium Comedy Club', address:'1151 St. Louis Galleria, Richmond Heights, MO',
+      headliner:true, story:'Two sold-out shows already added for the weekend — this is the room\u2019s biggest draw of the month, and a third late show tends to get added within 48 hours if the first two move fast.' },
+    { id:'m11', venueKey:'stifel', genre:'Country', title:'Caldwell Ridge — Backroads Tour', date:'2026-06-15', time:'19:00',
+      venue:'Stifel Theatre', address:'1400 Market St, St. Louis, MO' },
+    { id:'m12', venueKey:'chaifetz', genre:'Hip-Hop', title:'DJ Lo & The Collective — Summer Run', date:'2026-06-16', time:'20:00',
+      venue:'Chaifetz Arena', address:'1 S Compton Ave, St. Louis, MO' },
+    { id:'m13', venueKey:'oldrockhouse', genre:'Indie / Alternative', title:'Paper Lantern', date:'2026-06-16', time:'20:00',
+      venue:'Old Rock House', address:'1200 S 7th St, St. Louis, MO' },
+    { id:'m14', venueKey:'familyarena', genre:'Classical / Symphony', title:'St. Louis Symphony — Pops at the Arena', date:'2026-06-17', time:'19:30',
+      venue:'Family Arena', address:'2002 Arena Pkwy, St. Charles, MO' },
+  ],
+  onSaleSoon: [
+    { artist:'Solstice Radio — Fall Tour', venue:'Enterprise Center', onsale:'On sale Jun 20' },
+    { artist:'Comedy: Weekend Headliner TBA', venue:'Helium Comedy Club', onsale:'Tickets Jun 18' },
+    { artist:'Riverbend Folk Festival', venue:'Hollywood Casino Amphitheatre', onsale:'Presale Jun 19' },
+    { artist:'"Harbor Lights" — Extended Run', venue:'The Fabulous Fox', onsale:'On sale now' },
+    { artist:'Caldwell Ridge — Acoustic Night', venue:'The Pageant', onsale:'On sale Jun 22' },
+    { artist:'St. Louis Symphony — Season Opener', venue:'Stifel Theatre', onsale:'On sale Jul 1' },
+  ],
+};
+
+/* ============================================================
+   STATE + HELPERS
+   ============================================================ */
+let DATA = SEED;
+let genreFilter = 'all';   // Rock / Pop / Comedy / ...
+let formatFilter = 'all';  // all / Concert / Comedy / Theater
+
+const fmtDay = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' });
+const fmtDow = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday:'short' });
+const fmtTime = (t) => {
+  const [h, m] = t.split(':').map(Number);
+  return { t: `${((h + 11) % 12) + 1}:${String(m).padStart(2,'0')}`, ap: h >= 12 ? 'PM' : 'AM' };
+};
+const todayISO = () => new Date().toLocaleDateString('en-CA');
+
+function weekDates() {
+  const dates = DATA.events.map(e => e.date).sort();
+  const start = new Date((dates[0] || todayISO()) + 'T12:00:00');
+  return Array.from({length:7}, (_,i) => {
+    const d = new Date(start); d.setDate(start.getDate() + i);
+    return d.toLocaleDateString('en-CA');
+  });
+}
+
+const formatOf = (e) => VENUE_META[e.venueKey]?.format || 'Concert';
+const matches = (e) =>
+  (genreFilter === 'all' || genreOf(e) === genreFilter) &&
+  (formatFilter === 'all' || formatOf(e) === formatFilter);
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function renderPulse() {
+  const p = new Date(DATA.pulsedAt);
+  const next = new Date(p); next.setDate(p.getDate() + 7);
+  const daysLeft = Math.max(0, Math.ceil((next - Date.now()) / 86400000));
+  document.getElementById('pulse-text').innerHTML =
+    `<span class="long">Last pulse: </span>${p.toLocaleDateString('en-US',{month:'short',day:'numeric'})} · next in ${daysLeft}d`;
+}
+
+function renderRail() {
+  const rail = document.getElementById('rail-inner');
+  rail.innerHTML = weekDates().map(iso => {
+    const evs = DATA.events.filter(e => e.date === iso);
+    const ticks = evs.slice(0, 8).map(e => `<span class="tick${e.headliner ? ' headliner' : ''}"></span>`).join('');
+    const cls = ['rail-day', iso === todayISO() ? 'today' : '', evs.length ? '' : 'empty'].join(' ');
+    return `<button class="${cls}" data-goto="${iso}" aria-label="${fmtDay(iso)}, ${evs.length} shows">
+      <div class="rail-dow">${fmtDow(iso)}</div>
+      <div class="rail-date">${iso.slice(8)}</div>
+      <div class="rail-ticks">${ticks}</div>
+    </button>`;
+  }).join('');
+  rail.querySelectorAll('[data-goto]').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('day-' + b.dataset.goto)?.scrollIntoView({ behavior: 'smooth' });
+  }));
+}
+
+function renderMarquee() {
+  const grid = document.getElementById('marquee-grid');
+  const picks = DATA.events.filter(e => e.headliner && e.story);
+  if (!picks.length) {
+    grid.innerHTML = '<p class="empty-day">A quiet week up top — the full slate is below.</p>';
+    return;
+  }
+  grid.innerHTML = picks.map(e => {
+    const { t, ap } = fmtTime(e.time);
+    return `<article class="marquee-card">
+      <span class="marquee-tag">★ Marquee Show</span>
+      <div class="marquee-matchup">${e.title}</div>
+      <div class="marquee-when">${fmtDay(e.date)} · ${t} ${ap} · ${e.venue}</div>
+      <p class="marquee-story">${e.story}</p>
+      <a class="btn-tickets" target="_blank" rel="noopener sponsored" href="${ticketURL(e)}">Get Tickets</a>
+    </article>`;
+  }).join('');
+}
+
+function renderFilters() {
+  const present = [...new Set(DATA.events.map(genreOf))]
+    .sort((a, b) => GENRES.indexOf(a) - GENRES.indexOf(b));
+  const chip = (val, label, active, group) =>
+    `<button class="chip ${active ? 'active' : ''}" data-g="${group}" data-v="${val}">${label}</button>`;
+
+  document.getElementById('genre-chips').innerHTML =
+    chip('all', 'All Genres', genreFilter === 'all', 'g') +
+    present.map(g => chip(g, g, genreFilter === g, 'g')).join('');
+
+  document.getElementById('format-chips').innerHTML =
+    chip('all', 'Everything', formatFilter === 'all', 'f') +
+    chip('Concert', 'Concert', formatFilter === 'Concert', 'f') +
+    chip('Comedy', 'Comedy', formatFilter === 'Comedy', 'f') +
+    chip('Theater', 'Theater', formatFilter === 'Theater', 'f');
+
+  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+    if (c.dataset.g === 'g') genreFilter = c.dataset.v;
+    else formatFilter = c.dataset.v;
+    renderFilters(); renderDays();
+  }));
+}
+
+function renderDays() {
+  const wrap = document.getElementById('days');
+  wrap.innerHTML = weekDates().map(iso => {
+    const evs = DATA.events
+      .filter(e => e.date === iso)
+      .filter(matches)
+      .sort((a, b) => a.time.localeCompare(b.time));
+    const isToday = iso === todayISO();
+    const body = evs.length
+      ? `<div class="event-list">${evs.map(cardHTML).join('')}</div>`
+      : `<p class="empty-day">Nothing matching these filters.</p>`;
+    return `<div class="day-group" id="day-${iso}">
+      <div class="day-head ${isToday ? 'today-head' : ''}">
+        <h3>${isToday ? 'Today · ' : ''}${fmtDay(iso)}</h3>
+        <span class="count">${evs.length || 'no'} show${evs.length === 1 ? '' : 's'}</span>
+      </div>
+      ${body}
+    </div>`;
+  }).join('');
+  wrap.querySelectorAll('[data-ics]').forEach(bindICS);
+}
+
+function cardHTML(e) {
+  const src = VENUE_META[e.venueKey] || {};
+  const { t, ap } = fmtTime(e.time);
+  const maps = `https://maps.google.com/?q=${encodeURIComponent(e.venue + ' ' + e.address)}`;
+  return `<article class="event-card" style="--src:${src.color || 'inherit'}">
+    <div class="ev-time">${t}<small>${ap} CT</small></div>
+    <div>
+      <div class="ev-title">${e.title}${e.headliner ? '<span class="head-flag">★</span>' : ''}</div>
+      <div class="ev-meta">
+        <span class="ev-source">${src.label || e.venue}</span>
+        <span>·</span><span>${genreOf(e)}</span>
+        <span>·</span><a class="quiet" target="_blank" rel="noopener" href="${maps}">map</a>
+        <button class="quiet" data-ics="${e.id}">+ calendar</button>
+      </div>
+    </div>
+    <a class="btn-tickets" target="_blank" rel="noopener sponsored" href="${ticketURL(e)}">Tickets</a>
+  </article>`;
+}
+
+function renderOnSale() {
+  document.getElementById('off-grid').innerHTML = (DATA.onSaleSoon || []).map(o =>
+    `<span class="off-chip"><strong>${o.artist}</strong> · ${o.venue} · ${o.onsale}</span>`
+  ).join('');
+}
+
+/* ── SEO: JSON-LD MusicEvent/ComedyEvent/TheaterEvent rich results from live data ── */
+function schemaTypeFor(e) {
+  const fmt = formatOf(e);
+  if (fmt === 'Comedy') return 'ComedyEvent';
+  if (fmt === 'Theater') return 'TheaterEvent';
+  return 'MusicEvent';
+}
+function injectStructuredData() {
+  const ld = {
+    '@context': 'https://schema.org',
+    '@graph': DATA.events.slice(0, 25).map(e => ({
+      '@type': schemaTypeFor(e),
+      name: e.title,
+      startDate: `${e.date}T${e.time}:00-05:00`,
+      location: { '@type': 'Place', name: e.venue, address: e.address },
+      eventStatus: 'https://schema.org/EventScheduled',
+      offers: { '@type': 'Offer', url: ticketURL(e), availability: 'https://schema.org/InStock' },
+    })),
+  };
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+}
+
+/* ── ICS export ── */
+function bindICS(btn) {
+  if (btn.dataset.bound) return;
+  btn.dataset.bound = '1';
+  btn.addEventListener('click', () => {
+    const e = DATA.events.find(x => x.id === btn.dataset.ics);
+    if (!e) return;
+    const dt = e.date.replace(/-/g, '') + 'T' + e.time.replace(':', '') + '00';
+    const [h, m] = e.time.split(':').map(Number);
+    const d = new Date(e.date + 'T00:00:00'); d.setHours(h + 3, m);
+    const p = (n) => String(n).padStart(2, '0');
+    const end = `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(d.getHours())}${p(d.getMinutes())}00`;
+    const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//STLuker Music//EN','BEGIN:VEVENT',
+      `UID:${e.id}@music.stluker.com`, `DTSTART:${dt}`, `DTEND:${end}`,
+      `SUMMARY:${e.title}`, `LOCATION:${e.venue}, ${e.address}`,
+      `DESCRIPTION:${genreOf(e)} · ${formatOf(e)} · via music.stluker.com`,
+      'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const blob = new Blob([ics], { type: 'text/calendar' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = e.title.replace(/[^a-z0-9]+/gi, '-').toLowerCase() + '.ics';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('Calendar file downloaded');
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+/* ── BOOT ── */
+async function boot() {
+  if (ADS_ENABLED) document.body.classList.add('ads-on');
+  try {
+    const r = await fetch('/api/events', { headers: { accept: 'application/json' } });
+    if (r.ok) {
+      const live = await r.json();
+      if (live?.events?.length) DATA = live;
+    }
+  } catch (_) { /* standalone mode */ }
+  renderPulse(); renderRail(); renderMarquee(); renderFilters(); renderDays(); renderOnSale();
+  injectStructuredData();
+}
+boot();
+</script>
+</body>
+</html>

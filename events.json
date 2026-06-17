@@ -1,0 +1,143 @@
+{
+  "pulsedAt": "2026-06-13T18:00:00Z",
+  "events": [
+    {
+      "id": "m12",
+      "venueKey": "amphitheater",
+      "genre": "Rock",
+      "title": "Godsmack & Stone Temple Pilots — with Dorothy",
+      "date": "2026-06-14",
+      "time": "19:00",
+      "venue": "Hollywood Casino Amphitheatre",
+      "address": "14141 Riverport Dr, Maryland Heights, MO",
+      "headliner": true,
+      "story": "\"The Rise of Rock World Tour\" pairs two of the genre's heaviest-hitting headliners on one bill, with Dorothy opening. This is the amphitheater's marquee date for the week — lawn seats have been the value play on this tour, with the venue's usual pre-show tailgate scene in the lots from 5 PM."
+    },
+    {
+      "id": "m1",
+      "venueKey": "pageant",
+      "genre": "Indie / Alternative",
+      "title": "The Beths",
+      "date": "2026-06-13",
+      "time": "20:00",
+      "venue": "The Pageant",
+      "address": "6161 Delmar Blvd, St. Louis, MO",
+      "headliner": true,
+      "story": "The New Zealand indie favorites land at The Pageant on the back of glowing reviews for their latest record. Tight harmonies, sharp hooks, and one of the more reliably great rooms in the city for a band this size."
+    },
+    {
+      "id": "m2",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Bruce Bruce — Saturday Double Set",
+      "date": "2026-06-13",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "m3",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Bruce Bruce",
+      "date": "2026-06-14",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "m4",
+      "venueKey": "pageant",
+      "genre": "Indie / Alternative",
+      "title": "Shakey Graves — with The Man The Myth The Meatslab",
+      "date": "2026-06-16",
+      "time": "20:00",
+      "venue": "The Pageant",
+      "address": "6161 Delmar Blvd, St. Louis, MO"
+    },
+    {
+      "id": "m5",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "2026 Funniest Person in the Midwest — Preliminary Round",
+      "date": "2026-06-16",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "m6",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Myron Jewell",
+      "date": "2026-06-17",
+      "time": "19:30",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "m7",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Akaash Singh",
+      "date": "2026-06-18",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO",
+      "headliner": true,
+      "story": "Akaash Singh opens a four-show weekend run at Helium — his last visit sold out every slot, and a second late show was added within a day. If comedy is the plan this week, this is the one to book first."
+    },
+    {
+      "id": "m8",
+      "venueKey": "pageant",
+      "genre": "R&B / Soul",
+      "title": "Stokley Williams — with Kool Moe Dee",
+      "date": "2026-06-19",
+      "time": "20:00",
+      "venue": "The Pageant",
+      "address": "6161 Delmar Blvd, St. Louis, MO",
+      "headliner": true,
+      "story": "The voice and drummer behind Mint Condition shares the bill with hip-hop pioneer Kool Moe Dee — a rare pairing of golden-era soul and old-school rap on the same stage at The Pageant."
+    },
+    {
+      "id": "m9",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Akaash Singh — Friday Late Show",
+      "date": "2026-06-19",
+      "time": "21:15",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "m10",
+      "venueKey": "pageant",
+      "genre": "Metal",
+      "title": "Dance Gavin Dance — with Horse the Band, Wolf & Bear, The Novelists",
+      "date": "2026-06-20",
+      "time": "18:30",
+      "venue": "The Pageant",
+      "address": "6161 Delmar Blvd, St. Louis, MO",
+      "headliner": true,
+      "story": "A stacked four-band post-hardcore bill that's been selling out rooms this size on the rest of the run. Early doors, long night — get there for the openers."
+    },
+    {
+      "id": "m11",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Akaash Singh — Saturday Early Show",
+      "date": "2026-06-20",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    }
+  ],
+  "onSaleSoon": [
+    { "artist": "Alter Bridge", "venue": "The Hawthorn", "onsale": "Plays Jun 23" },
+    { "artist": "Avenged Sevenfold & Good Charlotte", "venue": "Hollywood Casino Amphitheatre", "onsale": "On sale now · Aug 1" },
+    { "artist": "Bryson Tiller", "venue": "Stifel Theatre", "onsale": "On sale now · Oct 2" },
+    { "artist": "Chance the Rapper", "venue": "Hollywood Casino Amphitheatre", "onsale": "On sale now · Oct 3" },
+    { "artist": "Sara Bareilles", "venue": "The Pageant", "onsale": "On sale now · Oct 17" },
+    { "artist": "Jack Harlow", "venue": "The Pageant", "onsale": "On sale now · Nov 17" }
+  ]
+}
