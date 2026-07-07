@@ -8,7 +8,7 @@
 <title>STL/Music — Every St. Louis Concert, Comedy & Live Show, Next 7 Days | Tickets, Times & Venues</title>
 <meta name="description" content="The complete seven-day St. Louis live entertainment slate: concerts at Enterprise Center, Hollywood Casino Amphitheatre, The Pageant, Stifel Theatre and more, plus comedy at Helium and theater at the Fox. Times, venues, headliners and tickets — updated weekly.">
 <link rel="canonical" href="https://music.stluker.com/">
-<meta name="theme-color" content="#0e1117">
+<meta name="theme-color" content="#f7f7f5">
 <meta property="og:type" content="website">
 <meta property="og:title" content="STL/Music — The Seven-Day St. Louis Live Show Slate">
 <meta property="og:description" content="Every concert, comedy show and theater date in St. Louis this week — with venues, headliners and tickets.">
@@ -28,17 +28,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <style>
   :root {
-    --midnight: #0e1117;
-    --surface: #151a22;
-    --surface-2: #1b212b;
-    --chalk: #f2efe8;
-    --chalk-dim: rgba(242,239,232,0.6);
-    --chalk-faint: rgba(242,239,232,0.34);
-    --marquee: #c2447a;
-    --brass: #d9a13b;
-    --turf: #4a9166;
-    --line: rgba(242,239,232,0.08);
-    --line-strong: rgba(242,239,232,0.16);
+    --midnight: #f7f7f5;
+    --surface: #ffffff;
+    --surface-2: #eef0f7;
+    --chalk: #111827;
+    --chalk-dim: #374151;
+    --chalk-faint: #6b7280;
+    --marquee: #a3195b;
+    --brass: #ca8a04;
+    --turf: #16a34a;
+    --line: #e5e7eb;
+    --line-strong: #d1d5db;
     --r: 10px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -60,7 +60,7 @@
 
   /* ── TOP BANNER (cross-site network) ── */
   .top-banner {
-    background: #090b10;
+    background: var(--surface-2);
     border-bottom: 1px solid var(--line);
     padding: 7px 20px;
     display: flex; align-items: center; justify-content: center;
@@ -72,17 +72,17 @@
   }
   .top-banner a {
     display: inline-flex; align-items: center; gap: 6px;
-    background: var(--surface-2); border: 1px solid var(--line-strong);
+    background: var(--surface); border: 1px solid var(--line-strong);
     border-radius: 20px; color: var(--chalk-dim); text-decoration: none;
     font-size: 11px; font-weight: 500; padding: 4px 12px;
     transition: background 0.15s, border-color 0.15s, color 0.15s;
   }
-  .top-banner a:hover { background: rgba(217,161,59,0.14); border-color: var(--brass); color: var(--chalk); }
+  .top-banner a:hover { background: #fefce8; border-color: var(--brass); color: var(--chalk); }
 
   /* ── HEADER ── */
   header {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(14,17,23,0.9);
+    background: rgba(255,255,255,0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
@@ -141,7 +141,7 @@
     background: none; border: none; font-family: inherit; color: inherit;
     cursor: pointer; transition: background 0.15s; border-radius: 0;
   }
-  .rail-day:hover { background: rgba(242,239,232,0.04); }
+  .rail-day:hover { background: rgba(17,24,39,0.04); }
   .rail-day:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
   .rail-dow { font-family: 'Oswald', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--chalk-faint); }
   .rail-date { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 17px; }
@@ -270,7 +270,7 @@
     font-size: 12px; font-weight: 400; padding: 6px 14px;
     transition: background 0.15s, border-color 0.15s, color 0.15s;
   }
-  .footer-network-link:hover { background: rgba(217,161,59,0.14); border-color: var(--brass); color: var(--chalk); }
+  .footer-network-link:hover { background: #fefce8; border-color: var(--brass); color: var(--chalk); }
 
   #toast {
     position: fixed; bottom: 22px; left: 50%;
@@ -392,24 +392,30 @@ const TICKETS = {
   sheldon:      () => `https://www.thesheldon.org/calendar/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
   chaifetz:     () => `https://www.chaifetzarena.com/events/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
   familyarena:  () => `https://familyarena.com/events/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  hawthorn:     () => `https://www.thehawthorn.com/events${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  citywinery:   () => `https://tickets.citywinery.com/stlouis${AFF_ID ? '?aid=' + AFF_ID : ''}`,
+  powellhall:   () => `https://www.slso.org/en/tickets-and-events/calendar/${AFF_ID ? '?aid=' + AFF_ID : ''}`,
 };
 const ticketURL = (e) => (TICKETS[e.venueKey] || TICKETS._fallback)(e);
 
 /* ── Venue metadata (where) + genre (what kind of show) ── */
 const VENUE_META = {
-  enterprise:   { label: 'Enterprise Center',           color: '#5b9bd9', format: 'Concert' },
-  amphitheater: { label: 'Hollywood Casino Amphitheatre', color: '#7aa7d9', format: 'Concert' },
-  stifel:       { label: 'Stifel Theatre',              color: '#d9a13b', format: 'Concert' },
-  fox:          { label: 'The Fabulous Fox',            color: '#e06158', format: 'Theater' },
-  pageant:      { label: 'The Pageant',                 color: '#c2447a', format: 'Concert' },
-  delmarhall:   { label: 'Delmar Hall',                 color: '#4a9166', format: 'Concert' },
-  factory:      { label: 'The Factory',                 color: '#e0c45a', format: 'Concert' },
-  oldrockhouse: { label: 'Old Rock House',              color: '#dd6b6b', format: 'Concert' },
-  offbroadway:  { label: 'Off Broadway',                color: '#6fb486', format: 'Concert' },
-  helium:       { label: 'Helium Comedy Club',          color: '#e07a5f', format: 'Comedy' },
-  sheldon:      { label: 'The Sheldon',                 color: '#9b8fd6', format: 'Theater' },
-  chaifetz:     { label: 'Chaifetz Arena',               color: '#4f83d6', format: 'Concert' },
-  familyarena:  { label: 'Family Arena',                color: '#5b9bd9', format: 'Concert' },
+  enterprise:   { label: 'Enterprise Center',           color: '#2563a8', format: 'Concert' },
+  amphitheater: { label: 'Hollywood Casino Amphitheatre', color: '#33559e', format: 'Concert' },
+  stifel:       { label: 'Stifel Theatre',              color: '#a1750f', format: 'Concert' },
+  fox:          { label: 'The Fabulous Fox',            color: '#c1503f', format: 'Theater' },
+  pageant:      { label: 'The Pageant',                 color: '#a3195b', format: 'Concert' },
+  delmarhall:   { label: 'Delmar Hall',                 color: '#2f7a4c', format: 'Concert' },
+  factory:      { label: 'The Factory',                 color: '#8a6d1a', format: 'Concert' },
+  oldrockhouse: { label: 'Old Rock House',              color: '#c14343', format: 'Concert' },
+  offbroadway:  { label: 'Off Broadway',                color: '#3f8a5c', format: 'Concert' },
+  helium:       { label: 'Helium Comedy Club',          color: '#c1613f', format: 'Comedy' },
+  sheldon:      { label: 'The Sheldon',                 color: '#6a4fb0', format: 'Theater' },
+  chaifetz:     { label: 'Chaifetz Arena',               color: '#2f5fae', format: 'Concert' },
+  familyarena:  { label: 'Family Arena',                color: '#2563a8', format: 'Concert' },
+  hawthorn:     { label: 'The Hawthorn',                color: '#8438a3', format: 'Concert' },
+  citywinery:   { label: 'City Winery St. Louis',       color: '#8a4326', format: 'Concert' },
+  powellhall:   { label: 'Powell Hall',                 color: '#5a4aa3', format: 'Theater' },
 };
 
 const GENRES = ['Rock','Pop','Hip-Hop','Country','R&B / Soul','Electronic','Indie / Alternative','Metal','Jazz / Blues','Comedy','Theater / Broadway','Classical / Symphony'];
@@ -479,8 +485,7 @@ const fmtTime = (t) => {
 const todayISO = () => new Date().toLocaleDateString('en-CA');
 
 function weekDates() {
-  const dates = DATA.events.map(e => e.date).sort();
-  const start = new Date((dates[0] || todayISO()) + 'T12:00:00');
+  const start = new Date(todayISO() + 'T12:00:00');
   return Array.from({length:7}, (_,i) => {
     const d = new Date(start); d.setDate(start.getDate() + i);
     return d.toLocaleDateString('en-CA');
@@ -497,10 +502,10 @@ const matches = (e) =>
    ============================================================ */
 function renderPulse() {
   const p = new Date(DATA.pulsedAt);
-  const next = new Date(p); next.setDate(p.getDate() + 7);
-  const daysLeft = Math.max(0, Math.ceil((next - Date.now()) / 86400000));
+  const daysSince = Math.floor((Date.now() - p) / 86400000);
+  const age = daysSince === 0 ? 'updated today' : daysSince === 1 ? 'updated yesterday' : `updated ${daysSince}d ago`;
   document.getElementById('pulse-text').innerHTML =
-    `<span class="long">Last pulse: </span>${p.toLocaleDateString('en-US',{month:'short',day:'numeric'})} · next in ${daysLeft}d`;
+    `<span class="long">Last pulse: </span>${p.toLocaleDateString('en-US',{month:'short',day:'numeric'})} · ${age}`;
 }
 
 function renderRail() {
