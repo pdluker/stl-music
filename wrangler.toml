@@ -1,20 +1,25 @@
-name            = "stl-music"
-main            = "src/worker.js"
-compatibility_date = "2026-06-13"
-compatibility_flags = ["nodejs_compat"]
-
-[observability]
-enabled = true
+name = "stl-music"
+main = "src/worker.js"
+compatibility_date = "2024-09-23"
 
 [assets]
-directory = "public"
-binding = "ASSETS"
+directory = "./public"
 
 [[kv_namespaces]]
 binding = "MUSIC_KV"
-id = "029e3ba66a3743bbaf4a2fef5992aae9"
+id      = "029e3ba66a3743bbaf4a2fef5992aae9"
 
-# Cron trigger removed — add manually in CF dashboard under:
-# Workers & Pages → stl-music → Settings → Trigger events → Add
-# Schedule: 0 11 * * 2  (every Tuesday 11:00 UTC / 6am CT)
-# Free tier limit is 5 cron triggers across all workers
+
+# Secrets — set via: wrangler secret put <NAME>
+# TM_API_KEY           = Ticketmaster Discovery API key (already set)
+# SG_CLIENT_ID         = SeatGeek client ID  -> seatgeek.com/account/develop (free, 2 min)
+# PULSE_SECRET         = manual trigger secret (already set)
+#
+# Gmail ingestion layer (optional -- skipped cleanly if any of these are missing):
+# GMAIL_CLIENT_ID      = OAuth2 client ID from Google Cloud Console
+# GMAIL_CLIENT_SECRET  = OAuth2 client secret (same project)
+# GMAIL_REFRESH_TOKEN  = long-lived refresh token (obtained once via OAuth consent flow)
+#   The worker exchanges this for a fresh ~60-min access token on every pulse,
+#   so nothing expires between cron runs.
+# ANTHROPIC_API_KEY    = Claude API key, used to parse event mentions out of email snippets
+

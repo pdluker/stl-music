@@ -1,143 +1,207 @@
 {
-  "pulsedAt": "2026-06-13T18:00:00Z",
+  "pulsedAt": "2026-06-22T10:00:00Z",
   "events": [
     {
-      "id": "m12",
+      "id": "w2-1",
       "venueKey": "amphitheater",
-      "genre": "Rock",
-      "title": "Godsmack & Stone Temple Pilots — with Dorothy",
-      "date": "2026-06-14",
+      "genre": "Hip-Hop",
+      "title": "MGK: Lost Americana Tour — with Wiz Khalifa & De'Wayne",
+      "date": "2026-06-22",
       "time": "19:00",
       "venue": "Hollywood Casino Amphitheatre",
       "address": "14141 Riverport Dr, Maryland Heights, MO",
       "headliner": true,
-      "story": "\"The Rise of Rock World Tour\" pairs two of the genre's heaviest-hitting headliners on one bill, with Dorothy opening. This is the amphitheater's marquee date for the week — lawn seats have been the value play on this tour, with the venue's usual pre-show tailgate scene in the lots from 5 PM."
+      "story": "Machine Gun Kelly's headline tour rolls through the amphitheater with Wiz Khalifa co-headlining — two of hip-hop's most recognizable live draws on the same outdoor bill. Lawn has been the move on this run; the stage production scales well to the back of the shed."
     },
     {
-      "id": "m1",
-      "venueKey": "pageant",
-      "genre": "Indie / Alternative",
-      "title": "The Beths",
-      "date": "2026-06-13",
-      "time": "20:00",
-      "venue": "The Pageant",
-      "address": "6161 Delmar Blvd, St. Louis, MO",
+      "id": "w2-2",
+      "venueKey": "amphitheater",
+      "genre": "Rock",
+      "title": "Santana & The Doobie Brothers",
+      "date": "2026-06-22",
+      "time": "19:00",
+      "venue": "Hollywood Casino Amphitheatre",
+      "address": "14141 Riverport Dr, Maryland Heights, MO",
       "headliner": true,
-      "story": "The New Zealand indie favorites land at The Pageant on the back of glowing reviews for their latest record. Tight harmonies, sharp hooks, and one of the more reliably great rooms in the city for a band this size."
+      "story": "Two of classic rock's most enduring catalogs on one bill — Santana's guitar mysticism and the Doobie Brothers' Southern California groove make for a rare pairing that works better live than on paper. Floor seats tend to be the crowd's sweet spot here."
     },
     {
-      "id": "m2",
+      "id": "w2-3",
       "venueKey": "helium",
       "genre": "Comedy",
-      "title": "Bruce Bruce — Saturday Double Set",
-      "date": "2026-06-13",
-      "time": "19:00",
-      "venue": "Helium Comedy Club",
-      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
-    },
-    {
-      "id": "m3",
-      "venueKey": "helium",
-      "genre": "Comedy",
-      "title": "Bruce Bruce",
-      "date": "2026-06-14",
-      "time": "19:00",
-      "venue": "Helium Comedy Club",
-      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
-    },
-    {
-      "id": "m4",
-      "venueKey": "pageant",
-      "genre": "Indie / Alternative",
-      "title": "Shakey Graves — with The Man The Myth The Meatslab",
-      "date": "2026-06-16",
-      "time": "20:00",
-      "venue": "The Pageant",
-      "address": "6161 Delmar Blvd, St. Louis, MO"
-    },
-    {
-      "id": "m5",
-      "venueKey": "helium",
-      "genre": "Comedy",
-      "title": "2026 Funniest Person in the Midwest — Preliminary Round",
-      "date": "2026-06-16",
-      "time": "19:00",
-      "venue": "Helium Comedy Club",
-      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
-    },
-    {
-      "id": "m6",
-      "venueKey": "helium",
-      "genre": "Comedy",
-      "title": "Myron Jewell",
-      "date": "2026-06-17",
-      "time": "19:30",
-      "venue": "Helium Comedy Club",
-      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
-    },
-    {
-      "id": "m7",
-      "venueKey": "helium",
-      "genre": "Comedy",
-      "title": "Akaash Singh",
-      "date": "2026-06-18",
-      "time": "19:00",
-      "venue": "Helium Comedy Club",
-      "address": "1151 St. Louis Galleria, Richmond Heights, MO",
-      "headliner": true,
-      "story": "Akaash Singh opens a four-show weekend run at Helium — his last visit sold out every slot, and a second late show was added within a day. If comedy is the plan this week, this is the one to book first."
-    },
-    {
-      "id": "m8",
-      "venueKey": "pageant",
-      "genre": "R&B / Soul",
-      "title": "Stokley Williams — with Kool Moe Dee",
-      "date": "2026-06-19",
-      "time": "20:00",
-      "venue": "The Pageant",
-      "address": "6161 Delmar Blvd, St. Louis, MO",
-      "headliner": true,
-      "story": "The voice and drummer behind Mint Condition shares the bill with hip-hop pioneer Kool Moe Dee — a rare pairing of golden-era soul and old-school rap on the same stage at The Pageant."
-    },
-    {
-      "id": "m9",
-      "venueKey": "helium",
-      "genre": "Comedy",
-      "title": "Akaash Singh — Friday Late Show",
-      "date": "2026-06-19",
+      "title": "Akaash Singh — Saturday Late Show",
+      "date": "2026-06-22",
       "time": "21:15",
       "venue": "Helium Comedy Club",
       "address": "1151 St. Louis Galleria, Richmond Heights, MO"
     },
     {
-      "id": "m10",
-      "venueKey": "pageant",
-      "genre": "Metal",
-      "title": "Dance Gavin Dance — with Horse the Band, Wolf & Bear, The Novelists",
-      "date": "2026-06-20",
-      "time": "18:30",
-      "venue": "The Pageant",
-      "address": "6161 Delmar Blvd, St. Louis, MO",
-      "headliner": true,
-      "story": "A stacked four-band post-hardcore bill that's been selling out rooms this size on the rest of the run. Early doors, long night — get there for the openers."
-    },
-    {
-      "id": "m11",
+      "id": "w2-4",
       "venueKey": "helium",
       "genre": "Comedy",
-      "title": "Akaash Singh — Saturday Early Show",
-      "date": "2026-06-20",
+      "title": "Justin Whitehead",
+      "date": "2026-06-21",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-5",
+      "venueKey": "delmarhall",
+      "genre": "Indie / Alternative",
+      "title": "Tigers Jaw & Pool Kids",
+      "date": "2026-06-22",
+      "time": "19:00",
+      "venue": "Delmar Hall",
+      "address": "6133 Delmar Blvd, St. Louis, MO"
+    },
+    {
+      "id": "w2-6",
+      "venueKey": "hawthorn",
+      "genre": "Indie / Alternative",
+      "title": "Passion Pit",
+      "date": "2026-06-22",
+      "time": "20:00",
+      "venue": "The Hawthorn",
+      "address": "2225 Washington Ave, St. Louis, MO",
+      "headliner": true,
+      "story": "The synth-pop architects behind 'Sleepyhead' and 'Take a Walk' return in a rare intimate setting — The Hawthorn's 1,500-cap room is as close as you'll get to a band who typically plays much larger venues."
+    },
+    {
+      "id": "w2-7",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "2026 Funniest Person in the Midwest — Preliminary Round",
+      "date": "2026-06-23",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-8",
+      "venueKey": "amphitheater",
+      "genre": "Pop",
+      "title": "The Pussycat Dolls — with Lil Kim & Mya",
+      "date": "2026-06-23",
+      "time": "18:30",
+      "venue": "Hollywood Casino Amphitheatre",
+      "address": "14141 Riverport Dr, Maryland Heights, MO",
+      "headliner": true,
+      "story": "A 2000s pop reunion on a grand scale — the Pussycat Dolls' comeback tour with Lil Kim and Mya in support makes for a nostalgia-heavy outdoor night. Tickets from $49; the pit has been the energy center on every stop this run."
+    },
+    {
+      "id": "w2-9",
+      "venueKey": "sheldon",
+      "genre": "Classical / Symphony",
+      "title": "Twangfest 2026 — Dale Watson, Rosali, Chuck Mead & More",
+      "date": "2026-06-24",
+      "time": "18:00",
+      "venue": "Powell Hall",
+      "address": "718 N Grand Blvd, St. Louis, MO"
+    },
+    {
+      "id": "w2-10",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Stormy Daniels",
+      "date": "2026-06-24",
+      "time": "19:30",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-11",
+      "venueKey": "amphitheater",
+      "genre": "Pop",
+      "title": "Meghan Trainor — with Icona Pop & Ryan Trainor",
+      "date": "2026-06-24",
+      "time": "18:30",
+      "venue": "Hollywood Casino Amphitheatre",
+      "address": "14141 Riverport Dr, Maryland Heights, MO"
+    },
+    {
+      "id": "w2-12",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "2026 Funniest Person in the Midwest — Preliminary Round",
+      "date": "2026-06-25",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-13",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Earthquake",
+      "date": "2026-06-26",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO",
+      "headliner": true,
+      "story": "Comedy veteran Earthquake brings his full weekend run to Helium — four shows across Friday and Saturday. Known for his booming delivery and unapologetic observational style, he's one of the most consistent headliners the room books all year."
+    },
+    {
+      "id": "w2-14",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Earthquake — Friday Late Show",
+      "date": "2026-06-26",
+      "time": "21:15",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-15",
+      "venueKey": "chaifetz",
+      "genre": "Pop",
+      "title": "Louis Tomlinson",
+      "date": "2026-06-27",
+      "time": "19:00",
+      "venue": "Chaifetz Arena",
+      "address": "1 S Compton Ave, St. Louis, MO",
+      "headliner": true,
+      "story": "The One Direction alum's solo tour lands at Chaifetz — his fanbase travels hard for these dates and the floor has been electric on this leg. One of the bigger pop draws of the month in terms of raw ticket demand."
+    },
+    {
+      "id": "w2-16",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Earthquake — Saturday Early Show",
+      "date": "2026-06-27",
+      "time": "19:00",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-17",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Earthquake — Saturday Late Show",
+      "date": "2026-06-27",
+      "time": "21:30",
+      "venue": "Helium Comedy Club",
+      "address": "1151 St. Louis Galleria, Richmond Heights, MO"
+    },
+    {
+      "id": "w2-18",
+      "venueKey": "helium",
+      "genre": "Comedy",
+      "title": "Earthquake — Sunday Show",
+      "date": "2026-06-28",
       "time": "19:00",
       "venue": "Helium Comedy Club",
       "address": "1151 St. Louis Galleria, Richmond Heights, MO"
     }
   ],
   "onSaleSoon": [
-    { "artist": "Alter Bridge", "venue": "The Hawthorn", "onsale": "Plays Jun 23" },
+    { "artist": "Muse with Bloc Party & The Temper Trap", "venue": "Hollywood Casino Amphitheatre", "onsale": "On sale now · Jul 5" },
+    { "artist": "Usher & Chris Brown — New Edition Way Tour", "venue": "The Dome at America's Center", "onsale": "On sale now · Jul 20" },
     { "artist": "Avenged Sevenfold & Good Charlotte", "venue": "Hollywood Casino Amphitheatre", "onsale": "On sale now · Aug 1" },
+    { "artist": "Noah Kahan", "venue": "Busch Stadium", "onsale": "On sale now · Aug 2" },
+    { "artist": "Guns N' Roses with Public Enemy", "venue": "Busch Stadium", "onsale": "On sale now · Aug 16" },
     { "artist": "Bryson Tiller", "venue": "Stifel Theatre", "onsale": "On sale now · Oct 2" },
-    { "artist": "Chance the Rapper", "venue": "Hollywood Casino Amphitheatre", "onsale": "On sale now · Oct 3" },
-    { "artist": "Sara Bareilles", "venue": "The Pageant", "onsale": "On sale now · Oct 17" },
-    { "artist": "Jack Harlow", "venue": "The Pageant", "onsale": "On sale now · Nov 17" }
+    { "artist": "Chance the Rapper", "venue": "The Pageant", "onsale": "On sale now · Oct 7" },
+    { "artist": "Louis Tomlinson — 2nd St. Louis Date TBA", "venue": "Chaifetz Arena", "onsale": "Watch for announcement" }
   ]
 }
