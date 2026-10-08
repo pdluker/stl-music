@@ -328,8 +328,8 @@ async function fetchGmailEvents(env) {
         'x-api-key':          env.ANTHROPIC_API_KEY,
       },
       body: JSON.stringify({
-        model:      'claude-haiku-4-5-20251001',
-        max_tokens: 1024,
+        model:      'claude-haiku-5-5',
+        max_tokens: 3072,
         messages: [{
           role:    'user',
           content: `Extract upcoming St. Louis concert/show events from these email snippets.
@@ -348,7 +348,7 @@ ${content}`,
       return [];
     }
     const aiJson = await aiResp.json();
-    const text   = aiJson.content?.[0]?.text || '[]';
+    const text   = (aiJson.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('') || '[]';
 
     let parsed;
     try { parsed = JSON.parse(text.replace(/```json|```/g, '').trim()); }
